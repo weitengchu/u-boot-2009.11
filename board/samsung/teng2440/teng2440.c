@@ -44,8 +44,8 @@ DECLARE_GLOBAL_DATA_PTR;
 #define M_PDIV	0x3
 #define M_SDIV	0x1
 #elif defined (CONFIG_S3C2440)
-#define M_MDIV	0xA1
-#define M_PDIV	0x3
+#define M_MDIV	0x7f
+#define M_PDIV	0x2
 #define M_SDIV	0x1
 #endif
 
