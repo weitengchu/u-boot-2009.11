@@ -71,7 +71,8 @@
     defined(CONFIG_440EP) || \
     defined(CONFIG_PCI_OHCI) || \
     defined(CONFIG_MPC5200) || \
-    defined(CONFIG_SYS_OHCI_USE_NPS)
+    defined(CONFIG_SYS_OHCI_USE_NPS) || \
+    defined(CONFIG_S3C2440)    
 # define OHCI_USE_NPS		/* force NoPowerSwitching mode */
 #endif
 

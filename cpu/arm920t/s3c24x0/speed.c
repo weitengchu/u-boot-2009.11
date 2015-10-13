@@ -31,7 +31,6 @@
 
 #include <common.h>
 #if defined(CONFIG_S3C2400) || defined (CONFIG_S3C2410) || defined (CONFIG_TRAB) || defined(CONFIG_S3C2440)
-
 #include <asm/io.h>
 
 #if defined(CONFIG_S3C2400)
@@ -99,6 +98,7 @@ ulong get_HCLK(void)
     }
 #else
 	return (readl(&clk_power->CLKDIVN) & 2) ? get_FCLK() / 2 : get_FCLK();
+#endif    
 }
 
 /* return PCLK frequency */
