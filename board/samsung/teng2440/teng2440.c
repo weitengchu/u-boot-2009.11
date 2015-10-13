@@ -49,6 +49,8 @@ DECLARE_GLOBAL_DATA_PTR;
 #define M_SDIV	0x1
 #endif
 
+#endif
+
 #define USB_CLOCK 1
 
 #if USB_CLOCK==0
