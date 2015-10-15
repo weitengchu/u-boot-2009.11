@@ -156,12 +156,18 @@
  * FLASH and environment organization
  */
 
-#define CONFIG_AMD_LV400	1	/* uncomment this if you have a LV400 flash */
-#if 0
-#define CONFIG_AMD_LV800	1	/* uncomment this if you have a LV800 flash */
-#endif
+//#define CONFIG_AMD_LV400	1	/* uncomment this if you have a LV400 flash */
+//#define CONFIG_AMD_LV800	1	/* uncomment this if you have a LV800 flash */
+#define CONFIG_AMD_LV160    1
 
 #define CONFIG_SYS_MAX_FLASH_BANKS	1	/* max number of memory banks */
+
+#ifdef CONFIG_AMD_LV160
+#define PHYS_FLASH_SIZE      0x00200000
+#define CONFIG_SYS_MAX_FLASH_SECT  (35)
+#define CONFIG_ENV_ADDR (CONFIG_SYS_FLASH_BASE + 0x080000)
+#endif
+
 #ifdef CONFIG_AMD_LV800
 #define PHYS_FLASH_SIZE		0x00100000 /* 1MB */
 #define CONFIG_SYS_MAX_FLASH_SECT	(19)	/* max number of sectors on one chip */
