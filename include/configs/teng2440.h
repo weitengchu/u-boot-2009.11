@@ -55,10 +55,17 @@
  * Hardware drivers
  */
 #define CONFIG_NET_MULTI
-#define CONFIG_CS8900		/* we have a CS8900 on-board */
-#define CONFIG_CS8900_BASE	0x19000300
-#define CONFIG_CS8900_BUS16	/* the Linux driver does accesses as shorts */
-
+//#define CONFIG_CS8900		/* we have a CS8900 on-board */
+//#define CONFIG_CS8900_BASE	0x19000300
+//#define CONFIG_CS8900_BUS16	/* the Linux driver does accesses as shorts */
+#define CONFIG_NET_RETRY_COUNT  20
+#define CONFIG_DRIVER_DM9000    1
+#define CONFIG_DM9000_BASE      0x20000000
+#define DM9000_IO               CONFIG_DM9000_BASE
+#define DM9000_DATA             (CONFIG_DM9000_BASE+4)
+#define CONFIG_DM9000_USE_16BIT 1
+#define CONFIG_DM9000_NO_SROM   1
+ 
 /*
  * select serial console configuration
  */
@@ -93,14 +100,16 @@
 #define CONFIG_CMD_CACHE
 #define CONFIG_CMD_DATE
 #define CONFIG_CMD_ELF
-
+#define CONFIG_CMD_PING
 
 #define CONFIG_BOOTDELAY	3
 /*#define CONFIG_BOOTARGS	"root=ramfs devfs=mount console=ttySA0,9600" */
 /*#define CONFIG_ETHADDR	08:00:3e:26:0a:5b */
-#define CONFIG_NETMASK          255.255.255.0
-#define CONFIG_IPADDR		10.0.0.110
-#define CONFIG_SERVERIP		10.0.0.1
+#define CONFIG_ETHADDR       1a:2b:3c:4d:5e:6f
+#define CONFIG_NETMASK       255.255.255.0
+#define CONFIG_IPADDR		 192.168.0.91
+#define CONFIG_SERVERIP		 192.168.0.90
+#define CONFIG_GATEWAYIP     192.168.0.1
 /*#define CONFIG_BOOTFILE	"elinos-lart" */
 /*#define CONFIG_BOOTCOMMAND	"tftp; bootm" */
 
@@ -114,11 +123,14 @@
  * Miscellaneous configurable options
  */
 #define	CONFIG_SYS_LONGHELP				/* undef to save memory		*/
-#define	CONFIG_SYS_PROMPT		"SMDK2410 # "	/* Monitor Command Prompt	*/
+#define	CONFIG_SYS_PROMPT		"teng2440 # "	/* Monitor Command Prompt	*/
 #define	CONFIG_SYS_CBSIZE		256		/* Console I/O Buffer Size	*/
 #define	CONFIG_SYS_PBSIZE (CONFIG_SYS_CBSIZE+sizeof(CONFIG_SYS_PROMPT)+16) /* Print Buffer Size */
 #define	CONFIG_SYS_MAXARGS		16		/* max number of command args	*/
 #define CONFIG_SYS_BARGSIZE		CONFIG_SYS_CBSIZE	/* Boot Argument Buffer Size	*/
+#define CONFIG_CMDLINE_EDITING 
+#define CONFIG_AUTO_COMPLETE 
+
 
 #define CONFIG_SYS_MEMTEST_START	0x30000000	/* memtest works on	*/
 #define CONFIG_SYS_MEMTEST_END		0x33F00000	/* 63 MB in DRAM	*/

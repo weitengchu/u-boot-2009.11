@@ -60,11 +60,11 @@
 #define B7_BWSCON		(DW32)
 
 /* BANK0CON */
-#define B0_Tacs			0x0	/*  0clk */
-#define B0_Tcos			0x0	/*  0clk */
-#define B0_Tacc			0x7	/* 14clk */
-#define B0_Tcoh			0x0	/*  0clk */
-#define B0_Tah			0x0	/*  0clk */
+#define B0_Tacs			0x1	/*  0clk */
+#define B0_Tcos			0x2	/*  0clk */
+#define B0_Tacc			0x4	/* 14clk */
+#define B0_Tcoh			0x2	/*  0clk */
+#define B0_Tah			0x1	/*  0clk */
 #define B0_Tacp			0x0
 #define B0_PMC			0x0	/* normal */
 
