@@ -102,16 +102,21 @@
 #define CONFIG_CMD_ELF
 #define CONFIG_CMD_PING
 
+#define CONFIG_SETUP_MEMORY_TAGS
+#define CONFIG_INITRD_TAG
+#define CONFIG_CMDLINE_TAG
+
 #define CONFIG_BOOTDELAY	3
-/*#define CONFIG_BOOTARGS	"root=ramfs devfs=mount console=ttySA0,9600" */
+#define CONFIG_BOOTARGS	"root=/dev/nfs nfsroot=192.168.0.90:/nfs/rootfs \
+ip=192.168.0.91 console=ttySA0,115200" 
 /*#define CONFIG_ETHADDR	08:00:3e:26:0a:5b */
 #define CONFIG_ETHADDR       1a:2b:3c:4d:5e:6f
 #define CONFIG_NETMASK       255.255.255.0
 #define CONFIG_IPADDR		 192.168.0.91
 #define CONFIG_SERVERIP		 192.168.0.90
 #define CONFIG_GATEWAYIP     192.168.0.1
-/*#define CONFIG_BOOTFILE	"elinos-lart" */
-/*#define CONFIG_BOOTCOMMAND	"tftp; bootm" */
+#define CONFIG_BOOTFILE	    "uImage" 
+#define CONFIG_BOOTCOMMAND	"tftp; bootm" 
 
 #if defined(CONFIG_CMD_KGDB)
 #define CONFIG_KGDB_BAUDRATE	115200		/* speed to run kgdb serial port */
@@ -135,7 +140,7 @@
 #define CONFIG_SYS_MEMTEST_START	0x30000000	/* memtest works on	*/
 #define CONFIG_SYS_MEMTEST_END		0x33F00000	/* 63 MB in DRAM	*/
 
-#define	CONFIG_SYS_LOAD_ADDR		0x33000000	/* default load address	*/
+#define	CONFIG_SYS_LOAD_ADDR		0x30008000	/* default load address	*/
 
 #define	CONFIG_SYS_HZ			1000
 
